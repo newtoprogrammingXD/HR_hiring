@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team | [Your Company]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== Global Styles ===== */
+        :root {
+            --primary: #4A6FA5;  /* Brand color */
+            --secondary: #FF6B6B;
+            --dark: #333;
+            --light: #f9f9f9;
+            --gray: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background: white;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3a5a8f;
+            transform: translateY(-2px);
+        }
+        
+        /* ===== Header ===== */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        /* ===== Job Listings ===== */
+        .jobs {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+        }
+        
+        .job-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .job-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 25px;
+            transition: 0.3s;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .job-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .salary {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* ===== Culture Section ===== */
+        .culture {
+            background: var(--light);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .culture-cards {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .culture-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .culture-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+        
+        /* ===== Mobile Responsive ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+            
+            .job-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">[Your Company]</div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Benefits</a>
+                    <a href="#" class="btn">Post a Job</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Join Our Team</h1>
+            <p>We’re building the future. Find your dream job and grow with us.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search jobs (e.g., 'Software Engineer')">
+                <button class="btn">Search</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Job Listings -->
+    <section class="jobs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Open Positions</h2>
+                <p>Browse our latest job openings and apply today.</p>
+            </div>
+            
+            <div class="job-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Engineering</button>
+                <button class="filter-btn">Marketing</button>
+                <button class="filter-btn">Design</button>
+                <button class="filter-btn">Remote</button>
+            </div>
+            
+            <div class="job-grid">
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <h3>Frontend Developer</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                    </div>
+                    <p class="salary">$90,000 - $120,000</p>
+                    <p>We’re looking for a skilled Frontend Developer to join our team.</p>
+                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Apply Now</a>
+                </div>
+                
+                <!-- Job Card 2 -->
+                <div class="job-card">
+                    <h3>HR Manager</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> New York</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                    </div>
+                    <p class="salary">$80,000 - $100,000</p>
+                    <p>Lead our HR initiatives and help build an amazing workplace.</p>
+                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Apply Now</a>
+                </div>
+                
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <h3>UX Designer</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> San Francisco</span>
+                        <span><i class="fas fa-briefcase"></i> Contract</span>
+                    </div>
+                    <p class="salary">$70,000 - $90,000</p>
+                    <p>Design intuitive user experiences for our products.</p>
+                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Culture Section -->
+    <section class="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Life at [Your Company]</h2>
+                <p>We believe in a culture of growth, collaboration, and innovation.</p>
+            </div>
+            
+            <div class="culture-cards">
+                <div class="culture-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborative Teams</h3>
+                    <p>Work with talented people who support your growth.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Remote-Friendly</h3>
+                    <p>Work from anywhere with flexible options.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Career Growth</h3>
+                    <p>Continuous learning and advancement opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 [Your Company]. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
