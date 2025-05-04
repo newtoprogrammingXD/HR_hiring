@@ -1,443 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Team | [Your Company]</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ===== Global Styles ===== */
-        :root {
-            --primary: #4A6FA5;  /* Brand color */
-            --secondary: #FF6B6B;
-            --dark: #333;
-            --light: #f9f9f9;
-            --gray: #777;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-            background: white;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: var(--primary);
-            color: white;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        
-        .btn:hover {
-            background: #3a5a8f;
-            transform: translateY(-2px);
-        }
-        
-        /* ===== Header ===== */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        /* ===== Hero Section ===== */
-        .hero {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .hero p {
-            font-size: 20px;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .search-bar {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .search-bar input {
-            flex: 1;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        
-        /* ===== Job Listings ===== */
-        .jobs {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--dark);
-        }
-        
-        .job-filters {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 10px 20px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .filter-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .job-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .job-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            padding: 25px;
-            transition: 0.3s;
-        }
-        
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .job-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .job-meta {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            color: var(--gray);
-            font-size: 14px;
-        }
-        
-        .job-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .salary {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        /* ===== Culture Section ===== */
-        .culture {
-            background: var(--light);
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .culture-cards {
-            display: flex;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .culture-card {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            width: 280px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        
-        .culture-card i {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        /* ===== Footer ===== */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #ccc;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #aaa;
-        }
-        
-        /* ===== Mobile Responsive ===== */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .search-bar {
-                flex-direction: column;
-            }
-            
-            .job-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Our Team | VITAL LABS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #0077ff;
+      --secondary: #00c2ff;
+      --accent: #ffd700;
+      --dark: #0b0c10;
+      --light: #f9f9f9;
+      --gray: #adb5bd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: scale(1.05);
+    }
+
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      color: var(--dark);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      animation: fadeIn 1.3s ease;
+    }
+
+    .search-bar {
+      display: flex;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-bar button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .jobs, .culture, .contact {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .job-filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--primary);
+      background: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .job-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      transition: transform 0.4s;
+    }
+
+    .job-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .job-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 15px;
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .salary {
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .culture-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .culture-card {
+      background: white;
+      border-radius: 10px;
+      width: 250px;
+      padding: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease-in-out;
+    }
+
+    .culture-card:hover {
+      transform: scale(1.05);
+    }
+
+    .culture-card i {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid var(--gray);
+      border-radius: 5px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 15px;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">[Your Company]</div>
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Jobs</a>
-                    <a href="#">Benefits</a>
-                    <a href="#" class="btn">Post a Job</a>
-                </div>
-            </nav>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">VITAL LABS</div>
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#jobs">Careers</a>
+        <a href="#culture">Culture</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn">WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="container">
+    <h1>Join Our Team</h1>
+    <p>We’re building the future. Find your dream job and grow with us.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search jobs (e.g., 'Designer')">
+      <button>Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- Jobs -->
+<section class="jobs" id="jobs">
+  <div class="container">
+    <div class="section-title">
+      <h2>Open Positions</h2>
+      <p>Find the role that’s right for you</p>
+    </div>
+    <div class="job-grid">
+      <div class="job-card">
+        <h3>Frontend Developer</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
         </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Join Our Team</h1>
-            <p>We’re building the future. Find your dream job and grow with us.</p>
-            <div class="search-bar">
-                <input type="text" placeholder="Search jobs (e.g., 'Software Engineer')">
-                <button class="btn">Search</button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Job Listings -->
-    <section class="jobs">
-        <div class="container">
-            <div class="section-title">
-                <h2>Open Positions</h2>
-                <p>Browse our latest job openings and apply today.</p>
-            </div>
-            
-            <div class="job-filters">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Engineering</button>
-                <button class="filter-btn">Marketing</button>
-                <button class="filter-btn">Design</button>
-                <button class="filter-btn">Remote</button>
-            </div>
-            
-            <div class="job-grid">
-                <!-- Job Card 1 -->
-                <div class="job-card">
-                    <h3>Frontend Developer</h3>
-                    <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
-                        <span><i class="fas fa-briefcase"></i> Full-time</span>
-                    </div>
-                    <p class="salary">$90,000 - $120,000</p>
-                    <p>We’re looking for a skilled Frontend Developer to join our team.</p>
-                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Apply Now</a>
-                </div>
-                
-                <!-- Job Card 2 -->
-                <div class="job-card">
-                    <h3>HR Manager</h3>
-                    <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> New York</span>
-                        <span><i class="fas fa-briefcase"></i> Full-time</span>
-                    </div>
-                    <p class="salary">$80,000 - $100,000</p>
-                    <p>Lead our HR initiatives and help build an amazing workplace.</p>
-                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Apply Now</a>
-                </div>
-                
-                <!-- Job Card 3 -->
-                <div class="job-card">
-                    <h3>UX Designer</h3>
-                    <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> San Francisco</span>
-                        <span><i class="fas fa-briefcase"></i> Contract</span>
-                    </div>
-                    <p class="salary">$70,000 - $90,000</p>
-                    <p>Design intuitive user experiences for our products.</p>
-                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Culture Section -->
-    <section class="culture">
-        <div class="container">
-            <div class="section-title">
-                <h2>Life at [Your Company]</h2>
-                <p>We believe in a culture of growth, collaboration, and innovation.</p>
-            </div>
-            
-            <div class="culture-cards">
-                <div class="culture-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Collaborative Teams</h3>
-                    <p>Work with talented people who support your growth.</p>
-                </div>
-                
-                <div class="culture-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Remote-Friendly</h3>
-                    <p>Work from anywhere with flexible options.</p>
-                </div>
-                
-                <div class="culture-card">
-                    <i class="fas fa-medal"></i>
-                    <h3>Career Growth</h3>
-                    <p>Continuous learning and advancement opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 [Your Company]. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        <p class="salary">$90,000 - $120,000</p>
+        <p>Creative and skilled frontend developer needed.</p>
+        <a href="#contact" class="btn">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Culture -->
+<section class="culture" id="culture">
+  <div class="container">
+    <div class="section-title">
+      <h2>Life at DreamWorks</h2>
+      <p>Experience a culture of creativity and balance.</p>
+    </div>
+    <div class="culture-cards">
+      <div class="culture-card">
+        <i class="fas fa-users"></i>
+        <h3>Collaboration</h3>
+        <p>Work with supportive cross-functional teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact / Form -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact & Apply</h2>
+      <p>Apply for a job or ask us anything!</p>
+    </div>
+    <form class="contact-form" action="https://formsubmit.co/rohan@nimesa.io" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message or Resume"></textarea>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 VitalLabs. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
